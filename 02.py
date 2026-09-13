@@ -1,22 +1,40 @@
-# Escreva um programa em python que pergunte tres informações do usuario
+# Escreva um programa em Python que pergunte as seguintes três informações do usuário:
+#
 # Você é estudante?
 # Qual é o dia da semana? (Terça-feira ou outro dia?)
 # Qual é o tipo da sala? (VIP ou Comum?)
-# 
-# O programa deve exibir "Desconto aplicado!" se for um Estudante ou um cara numa terça-feira na sala comum
+#
+# O programa deve exibir "Desconto aplicado!" se for um Estudante + Sala Comum
+# OU
+# O programa deve exibir "Desconto aplicado!" se for uma Terça-feira + Sala Comum
+# CASO CONTRÁRIO 
+# O programa deve exibir "Valor integral."
 
-estudante = input("Você é estudante? Responda com 'Sim'ou 'Não'")
-dia_da_semana = input("Hoje é Terça-feira? Responda com 'Sim'ou 'Não'")
-tipo_da_sala = input("Qual o tipo da sala? VIP ou Comum?")
 
-desconto_aplicado = estudante == "Sim" and tipo_da_sala == "Comum"
-desconto_aplicado = dia_da_semana == "Sim" and tipo_da_sala == "Comum"
+opcoes_estudante = ["sim", "não", "nao"]
+opcoes_dias = ["segunda-feira", "terça-feira", "quarta-feira", "quinta-feira", "sexta-feira", "sábado", "domingo"]
+opcoes_sala = ["vip", "comum"]
 
-valor_integral = estudante == "Não" and tipo_da_sala == "VIP"
 
-if estudante == "Sim" and tipo_da_sala == "Comum":
-    print(desconto_aplicado)
-elif dia_da_semana == "Sim" and tipo_da_sala == "Comum":
-    print(desconto_aplicado)
+estudante = input("Você é estudante? Responda com 'Sim' ou 'Não': ").lower()
+
+while estudante not in opcoes_estudante:
+    estudante = input("Resposta inválida! Responda somente com 'Sim' ou 'Não': ").lower()
+
+
+dia_da_semana = input("Hoje é que dia da semana?").lower()
+
+while dia_da_semana not in opcoes_dias:
+    dia_da_semana = input("Resposta inválida! Responda apenas com o dia da semana: ").lower()
+
+
+tipo_da_sala = input("Qual o tipo da sala? VIP ou Comum? ").lower()
+
+while tipo_da_sala not in opcoes_sala:
+    tipo_da_sala = input("Resposta inválida! Responda somente com 'VIP' ou 'Comum': ").lower()
+
+
+if (estudante == "sim" and tipo_da_sala == "comum") or (dia_da_semana == "terça-feira" and tipo_da_sala == "comum"):
+    print("Desconto aplicado!")
 else:
-    print(valor_integral)
+    print("Valor integral.")
