@@ -12,7 +12,9 @@
 
 
 opcoes_estudante = ["sim", "não", "nao"]
+
 opcoes_dias = ["segunda-feira", "terça-feira", "quarta-feira", "quinta-feira", "sexta-feira", "sábado", "domingo"]
+
 opcoes_sala = ["vip", "comum"]
 
 
