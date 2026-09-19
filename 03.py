@@ -24,26 +24,23 @@
 
 
 opcoes_bens = ["sim", "não", "nao"]
+
 opcoes_historico = ["sim", "não", "nao"]
 
 
 renda_mensal = float(input("Digite a sua renda mensal: "))
 
-
 score = int(input("Digite o seu score, entre 0 e 1000: "))
-
 
 bens_de_garantia = input("Você possui bens de garantia? Responda com 'Sim' ou 'Não'").lower()
 
 while bens_de_garantia not in opcoes_bens:
     bens_de_garantia = input("Resposta inválida! Responda somente com 'Sim' ou 'Não'").lower()
 
-
 historico_inadimplencia = input("Você possui histórico de inadimplência? Responda com 'Sim' ou 'Não'").lower()
 
 while historico_inadimplencia not in opcoes_historico:
     historico_inadimplencia = input("Resposta inválida! Responda somente com 'Sim' ou 'Não'").lower()
-
 
 
 if renda_mensal >= 3000 and score >= 600 and (historico_inadimplencia == "não" or historico_inadimplencia == "nao"):
